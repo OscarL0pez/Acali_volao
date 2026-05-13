@@ -1,0 +1,1611 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ACALI · El Volaó — Asociación de Carnavaler@s Linenses</title>
+<meta name="description" content="ACALI El Volaó — Asociación de Carnavaler@s Linenses. Vivimos el carnaval de La Línea de la Concepción todo el año. Hazte socio." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;600;700&family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --ink: #1a1320;
+    --cream: #fbf3e2;
+    --cream-2: #f5e9cf;
+    --magenta: #e23a7a;
+    --magenta-deep: #b71d5e;
+    --purple: #5a2787;
+    --purple-deep: #3d1762;
+    --gold: #f4c247;
+    --gold-deep: #d99b1a;
+    --coral: #ff6a3d;
+    --mint: #8ad7b6;
+    --turq: #2cb3a7;
+    --paper: #fff;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "DM Sans", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  .wrap { width: min(1200px, 92vw); margin: 0 auto; }
+
+  /* ─── Type ─────────────────────────────────── */
+  .display {
+    font-family: "Anton", "Archivo", sans-serif;
+    font-weight: 400;
+    line-height: 0.92;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+  }
+  .script {
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .eyebrow {
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* ─── NAV ──────────────────────────────────── */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(12px);
+    background: rgba(251, 243, 226, 0.85);
+    border-bottom: 1px solid rgba(26,19,32,0.08);
+  }
+  .nav-inner {
+    display: flex; align-items: center; gap: 24px;
+    padding: 14px 0;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand-logo {
+    width: 56px; height: 56px; border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    box-shadow: 3px 3px 0 var(--magenta);
+    flex-shrink: 0;
+    transition: transform .2s ease;
+  }
+  .brand:hover .brand-logo { transform: rotate(-6deg); }
+  .brand-name { font-family: "Anton", sans-serif; font-size: 1.4rem; letter-spacing: 0.04em; line-height: 1; }
+  .brand-tag { font-family: "Caveat", cursive; font-weight: 700; color: var(--magenta); font-size: 1rem; line-height: 1; margin-top: 2px; }
+  @media (max-width: 520px) { .brand-name, .brand-tag { display: none; } }
+
+  .nav-links { display: flex; gap: 28px; margin-left: auto; }
+  .nav-links a {
+    text-decoration: none; color: var(--ink);
+    font-weight: 600; font-size: 0.95rem;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--magenta); }
+  .nav-cta {
+    background: var(--ink); color: var(--cream);
+    padding: 12px 22px; border-radius: 999px;
+    font-weight: 700; font-size: 0.92rem;
+    text-decoration: none;
+    transition: transform .15s ease, background .15s ease;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .nav-cta:hover { background: var(--magenta); transform: translate(-1px,-1px); }
+
+  @media (max-width: 800px) {
+    .nav-links { display: none; }
+  }
+
+  /* ─── Papel picado ─────────────────────────── */
+  .picado {
+    width: 100%;
+    height: 56px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 60'><defs><pattern id='p' x='0' y='0' width='80' height='60' patternUnits='userSpaceOnUse'><path d='M0 0 H80 V8 L70 14 L60 8 L50 14 L40 8 L30 14 L20 8 L10 14 L0 8 Z' fill='%23e23a7a'/><circle cx='20' cy='22' r='3' fill='%23fbf3e2'/><circle cx='40' cy='22' r='3' fill='%23fbf3e2'/><circle cx='60' cy='22' r='3' fill='%23fbf3e2'/><path d='M10 30 Q20 38 30 30 Q40 22 50 30 Q60 38 70 30' stroke='%23fbf3e2' stroke-width='1.5' fill='none'/></pattern></defs><rect width='240' height='60' fill='url(%23p)'/></svg>");
+    background-repeat: repeat-x;
+    background-size: 240px 60px;
+  }
+  .picado.purple {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 60'><defs><pattern id='p' x='0' y='0' width='80' height='60' patternUnits='userSpaceOnUse'><path d='M0 0 H80 V8 L70 14 L60 8 L50 14 L40 8 L30 14 L20 8 L10 14 L0 8 Z' fill='%235a2787'/><circle cx='20' cy='22' r='3' fill='%23f4c247'/><circle cx='40' cy='22' r='3' fill='%23f4c247'/><circle cx='60' cy='22' r='3' fill='%23f4c247'/><path d='M10 30 Q20 38 30 30 Q40 22 50 30 Q60 38 70 30' stroke='%23f4c247' stroke-width='1.5' fill='none'/></pattern></defs><rect width='240' height='60' fill='url(%23p)'/></svg>");
+  }
+
+  /* ─── HERO ─────────────────────────────────── */
+  .hero {
+    position: relative;
+    padding: 80px 0 120px;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--ink); color: var(--gold);
+    padding: 8px 16px; border-radius: 999px;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--magenta);
+    box-shadow: 0 0 0 4px rgba(226, 58, 122, 0.25);
+    animation: pulse 1.8s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(226,58,122,0.25); }
+    50% { box-shadow: 0 0 0 8px rgba(226,58,122,0.05); }
+  }
+
+  .hero h1 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.88;
+    text-transform: uppercase;
+    margin: 0 0 24px;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 .l1 { display: block; }
+  .hero h1 .l2 {
+    display: block;
+    color: var(--magenta);
+    font-style: italic;
+    transform: skew(-6deg, 0);
+    transform-origin: left;
+  }
+  .hero h1 .l3 { display: block; }
+  .hero h1 .underline {
+    background-image: linear-gradient(to bottom, transparent 60%, var(--gold) 60%, var(--gold) 92%, transparent 92%);
+  }
+
+  .hero-sub {
+    font-size: 1.18rem;
+    max-width: 480px;
+    color: rgba(26,19,32,0.78);
+    margin: 0 0 36px;
+  }
+
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    padding: 18px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 2px solid var(--ink);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary { background: var(--magenta); color: white; box-shadow: 4px 4px 0 var(--ink); }
+  .btn-primary:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
+  .btn-ghost { background: transparent; color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--cream); }
+  .btn .arrow { transition: transform .2s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  .hero-trust {
+    display: flex; align-items: center; gap: 14px;
+    margin-top: 32px;
+  }
+  .avatar-stack { display: flex; }
+  .avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 2px solid var(--cream);
+    margin-left: -10px;
+    background: linear-gradient(135deg, var(--gold), var(--coral));
+    display: grid; place-items: center;
+    font-family: "Archivo", sans-serif; font-weight: 800;
+    font-size: 0.78rem; color: var(--ink);
+  }
+  .avatar:nth-child(1) { background: linear-gradient(135deg, var(--magenta), var(--purple)); color: white; margin-left: 0; }
+  .avatar:nth-child(2) { background: linear-gradient(135deg, var(--gold), var(--coral)); }
+  .avatar:nth-child(3) { background: linear-gradient(135deg, var(--turq), var(--purple)); color: white; }
+  .avatar:nth-child(4) { background: linear-gradient(135deg, var(--coral), var(--magenta)); color: white; }
+  .trust-text { font-size: 0.92rem; line-height: 1.3; }
+  .trust-text strong { font-family: "Archivo", sans-serif; font-weight: 800; }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 1 / 1.05;
+    max-width: 480px;
+    margin-left: auto;
+  }
+  .poster {
+    position: absolute;
+    inset: 0;
+    background: var(--ink);
+    border-radius: 24px;
+    padding: 36px 32px 32px;
+    color: var(--cream);
+    transform: rotate(2deg);
+    box-shadow: 10px 10px 0 var(--magenta);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .poster::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1.5px dashed rgba(251,243,226,0.3);
+    border-radius: 18px;
+    pointer-events: none;
+  }
+  .poster-tag {
+    display: inline-flex; align-self: flex-start;
+    background: var(--gold); color: var(--ink);
+    font-family: "Archivo", sans-serif; font-weight: 800;
+    font-size: 0.72rem; letter-spacing: 0.16em;
+    padding: 6px 12px; border-radius: 999px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+  .poster-title {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .poster-title .accent { color: var(--gold); font-style: italic; }
+  .poster-script {
+    font-family: "Caveat", cursive; font-weight: 700;
+    color: var(--magenta);
+    font-size: 1.7rem;
+    margin: 8px 0 0;
+    transform: rotate(-3deg);
+    align-self: flex-start;
+  }
+  .poster-meta {
+    margin-top: auto;
+    display: grid; grid-template-columns: auto 1fr; gap: 6px 16px;
+    font-size: 0.92rem;
+  }
+  .poster-meta dt { font-family: "Archivo", sans-serif; font-weight: 800; color: var(--gold); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.12em; padding-top: 4px; }
+  .poster-meta dd { margin: 0; }
+
+  .fish {
+    position: absolute;
+    top: -22px; right: -22px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    transform: rotate(8deg);
+    box-shadow: 6px 6px 0 var(--magenta), inset 0 0 0 3px var(--ink);
+    background: var(--paper);
+    overflow: hidden;
+    z-index: 2;
+  }
+  .fish img { width: 100%; height: 100%; object-fit: cover; }
+
+  .sticker {
+    position: absolute;
+    background: var(--magenta);
+    color: white;
+    font-family: "Archivo", sans-serif; font-weight: 900;
+    text-transform: uppercase;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 2px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--ink);
+    transform: rotate(-8deg);
+    bottom: -22px; left: -28px;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    line-height: 1.15;
+    z-index: 2;
+  }
+  .sticker .big {
+    display: block;
+    font-family: "Anton", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .confetti {
+    position: absolute;
+    pointer-events: none;
+  }
+  .confetti span {
+    position: absolute;
+    width: 12px; height: 12px;
+    border-radius: 3px;
+  }
+
+  /* ─── EVENTO BANNER ───────────────────────── */
+  .event-banner {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 28px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .event-marquee {
+    display: flex; gap: 48px;
+    white-space: nowrap;
+    animation: marquee 35s linear infinite;
+    font-family: "Anton", sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .event-marquee span { display: inline-flex; align-items: center; gap: 48px; }
+  .event-marquee .pop { color: var(--gold); }
+  .event-marquee .star { color: var(--magenta); font-size: 1.5rem; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ─── NAMES TICKER ────────────────────────── */
+  .names-ticker {
+    background: var(--cream);
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    padding: 24px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .names-ticker .head {
+    text-align: center;
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    color: var(--purple);
+    margin-bottom: 14px;
+  }
+  .names-track {
+    display: flex; gap: 36px;
+    white-space: nowrap;
+    animation: marquee 80s linear infinite;
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .names-track > span { display: inline-flex; align-items: center; gap: 36px; }
+  .names-track .n { display: inline-block; }
+  .names-track .n:nth-child(3n) { color: var(--magenta); transform: rotate(-2deg); }
+  .names-track .n:nth-child(4n) { color: var(--purple); transform: rotate(1deg); }
+  .names-track .n:nth-child(5n) { color: var(--gold-deep); transform: rotate(-1deg); }
+  .names-track .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--magenta);
+    display: inline-block;
+    align-self: center;
+    flex-shrink: 0;
+  }
+  .names-track .dot:nth-of-type(2n) { background: var(--gold); }
+  .names-track .dot:nth-of-type(3n) { background: var(--purple); }
+  .names-ticker:hover .names-track { animation-play-state: paused; }
+
+  /* ─── SECTIONS ─────────────────────────────── */
+  section { position: relative; }
+  .section-pad { padding: 100px 0; }
+  .section-head { margin-bottom: 56px; max-width: 720px; }
+  .section-head .eyebrow { color: var(--magenta); margin-bottom: 14px; display: block; }
+  .section-head h2 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .section-head .lead {
+    font-size: 1.12rem;
+    color: rgba(26,19,32,0.72);
+    margin: 0;
+    max-width: 580px;
+  }
+
+  /* BENEFICIOS */
+  .benefits {
+    background: var(--paper);
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 900px) { .benefits-grid { grid-template-columns: 1fr; } }
+
+  /* Merch showcase */
+  .merch-showcase {
+    margin-top: 40px;
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 24px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
+    position: relative;
+  }
+  @media (max-width: 800px) { .merch-showcase { grid-template-columns: 1fr; } }
+  .merch-img {
+    position: relative;
+    min-height: 280px;
+    background: #58c4d8;
+  }
+  .merch-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .merch-stamp {
+    position: absolute;
+    top: 16px; left: 16px;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: "Archivo", sans-serif;
+    font-weight: 900;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 2px solid var(--ink);
+    transform: rotate(-4deg);
+  }
+  .merch-text {
+    padding: 44px 40px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .merch-text .eyebrow { color: var(--gold); display: block; margin-bottom: 14px; }
+  .merch-text h3 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+  }
+  .merch-text h3 .a { color: var(--magenta); font-style: italic; }
+  .merch-text p {
+    margin: 0;
+    opacity: 0.88;
+    font-size: 1rem;
+  }
+  .merch-text .script {
+    font-family: "Caveat", cursive; font-weight: 700;
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin-top: 18px;
+    transform: rotate(-2deg);
+    align-self: flex-start;
+  }
+  .benefit-card {
+    background: var(--cream);
+    border: 2px solid var(--ink);
+    border-radius: 20px;
+    padding: 32px 28px;
+    position: relative;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .benefit-card:hover { transform: translate(-3px,-3px); box-shadow: 6px 6px 0 var(--ink); }
+  .benefit-card:nth-child(1) { background: #fff0d6; }
+  .benefit-card:nth-child(2) { background: #ffe1ec; }
+  .benefit-card:nth-child(3) { background: #e7defc; }
+  .benefit-num {
+    font-family: "Anton", sans-serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--ink);
+    opacity: 0.12;
+    position: absolute;
+    top: 18px; right: 22px;
+  }
+  .benefit-icon {
+    width: 56px; height: 56px;
+    background: var(--ink); color: var(--cream);
+    border-radius: 14px;
+    display: grid; place-items: center;
+    margin-bottom: 24px;
+  }
+  .benefit-icon svg { width: 28px; height: 28px; }
+  .benefit-card h3 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin: 0 0 10px;
+    line-height: 1.15;
+  }
+  .benefit-card p {
+    margin: 0;
+    color: rgba(26,19,32,0.75);
+    font-size: 0.98rem;
+  }
+  .benefit-card ul {
+    margin: 16px 0 0; padding: 0; list-style: none;
+    border-top: 1.5px dashed rgba(26,19,32,0.2);
+    padding-top: 16px;
+  }
+  .benefit-card li {
+    padding: 6px 0;
+    font-size: 0.92rem;
+    display: flex; gap: 10px;
+  }
+  .benefit-card li::before {
+    content: "✦"; color: var(--magenta); font-weight: bold;
+  }
+
+  /* SOCIOS COUNTER */
+  .counter {
+    background: var(--magenta);
+    color: var(--cream);
+    padding: 110px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .counter::before, .counter::after {
+    content: "";
+    position: absolute;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: var(--magenta-deep);
+    opacity: 0.5;
+  }
+  .counter::before { top: -120px; left: -100px; }
+  .counter::after { bottom: -120px; right: -100px; }
+  .counter-inner { position: relative; z-index: 1; }
+  .counter .script { color: var(--gold); font-size: 2rem; margin-bottom: 6px; }
+  .counter-num {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(8rem, 22vw, 18rem);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+  }
+  .counter-num .plus {
+    font-size: 0.5em;
+    color: var(--gold);
+    vertical-align: top;
+    margin-left: 8px;
+  }
+  .counter-label {
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 1.1rem;
+    margin-top: 12px;
+  }
+  .counter-sub {
+    font-size: 1.1rem;
+    max-width: 560px;
+    margin: 24px auto 0;
+    opacity: 0.92;
+  }
+  .counter-bar {
+    margin-top: 40px;
+    display: flex; justify-content: center; gap: 28px;
+    flex-wrap: wrap;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.82rem;
+  }
+  .counter-bar div { display: flex; align-items: center; gap: 10px; }
+  .counter-bar .num { color: var(--gold); font-family: "Anton", sans-serif; font-size: 1.5rem; letter-spacing: 0; }
+
+  /* EVENTO DETALLE */
+  .event-detail {
+    background: var(--cream);
+    padding: 100px 0;
+  }
+  .event-card {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+  }
+  @media (max-width: 900px) { .event-card { grid-template-columns: 1fr; } }
+  .event-date {
+    background: var(--gold);
+    color: var(--ink);
+    padding: 60px 40px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative;
+  }
+  .event-date::after {
+    content: "";
+    position: absolute;
+    right: -20px; top: 50%; transform: translateY(-50%);
+    width: 40px; height: 40px;
+    background: var(--ink);
+    border-radius: 50%;
+    z-index: 1;
+  }
+  @media (max-width: 900px) {
+    .event-date::after { right: 50%; top: auto; bottom: -20px; transform: translateX(50%); }
+  }
+  .event-day { font-family: "Archivo", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.9rem; }
+  .event-num {
+    font-family: "Anton", sans-serif;
+    font-size: 10rem;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    margin: 4px 0;
+  }
+  .event-month { font-family: "Anton", sans-serif; font-size: 2.2rem; text-transform: uppercase; }
+  .event-year { margin-top: 8px; font-weight: 700; }
+
+  .event-body { padding: 60px 48px; }
+  .event-tag {
+    display: inline-block;
+    background: var(--magenta); color: white;
+    font-family: "Archivo", sans-serif; font-weight: 800;
+    font-size: 0.72rem; letter-spacing: 0.16em;
+    padding: 6px 14px; border-radius: 999px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+  .event-title {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+  }
+  .event-title .accent { color: var(--gold); }
+  .event-desc {
+    font-size: 1.08rem;
+    opacity: 0.88;
+    margin: 0 0 24px;
+  }
+  .event-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 24px;
+    margin: 24px 0 32px;
+    padding-top: 24px;
+    border-top: 1.5px dashed rgba(251,243,226,0.25);
+  }
+  .event-meta-item { display: flex; gap: 12px; align-items: flex-start; }
+  .event-meta-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(251,243,226,0.1);
+    display: grid; place-items: center; flex-shrink: 0;
+  }
+  .event-meta-icon svg { width: 18px; height: 18px; color: var(--gold); }
+  .event-meta-text .k {
+    font-family: "Archivo", sans-serif;
+    font-size: 0.7rem; font-weight: 800;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .event-meta-text .v { font-weight: 600; font-size: 0.98rem; }
+
+  /* QUIENES SOMOS */
+  .about { padding: 110px 0; background: var(--paper); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .about-quote {
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    color: var(--purple);
+    margin: 0 0 24px;
+  }
+  .about-quote::before { content: "“"; color: var(--magenta); font-size: 1.3em; line-height: 0; vertical-align: -0.4em; margin-right: 6px; }
+  .about-quote::after { content: "”"; color: var(--magenta); font-size: 1.3em; line-height: 0; vertical-align: -0.4em; }
+  .about p {
+    font-size: 1.08rem;
+    color: rgba(26,19,32,0.75);
+    margin: 0 0 16px;
+  }
+  .about-badges {
+    display: flex; gap: 12px; flex-wrap: wrap;
+    margin-top: 28px;
+  }
+  .about-badge {
+    background: var(--cream);
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .about-badge .y { color: var(--magenta); font-weight: 900; }
+
+  .about-visual {
+    position: relative;
+    aspect-ratio: 1/1;
+  }
+  .photo-slot {
+    position: absolute;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 18px;
+    padding: 8px 8px 36px;
+    box-shadow: 4px 6px 0 rgba(26,19,32,0.15);
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .photo-slot:hover {
+    transform: rotate(0deg) scale(1.05) !important;
+    z-index: 5;
+    box-shadow: 8px 10px 0 rgba(26,19,32,0.2);
+  }
+  .photo-slot img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+  .photo-slot .cap {
+    position: absolute;
+    bottom: 8px; left: 0; right: 0;
+    text-align: center;
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--ink);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .ps1 { top: 0; left: 0; width: 62%; height: 62%; transform: rotate(-3deg); background-color: #fff; }
+  .ps2 { top: 8%; right: 0; width: 48%; height: 50%; transform: rotate(4deg); background-color: #fff; z-index: 2; }
+  .ps3 { bottom: 0; left: 14%; width: 70%; height: 48%; transform: rotate(2deg); background-color: #fff; z-index: 1; }
+
+  /* ─── HOW TO JOIN ─── */
+  .how {
+    background: var(--cream);
+    padding: 110px 0;
+    position: relative;
+  }
+  .how-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 36px;
+  }
+  @media (max-width: 800px) { .how-steps { grid-template-columns: 1fr; } }
+  .step-card {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 22px;
+    padding: 36px 32px;
+    position: relative;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .step-card:hover { transform: translate(-3px,-3px); box-shadow: 6px 6px 0 var(--ink); }
+  .step-num {
+    position: absolute;
+    top: -28px; left: 28px;
+    width: 60px; height: 60px;
+    background: var(--magenta);
+    color: var(--cream);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: "Anton", sans-serif;
+    font-size: 2rem;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .step-card:nth-child(2) .step-num { background: var(--purple); }
+  .step-card h3 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 12px 0 12px;
+    line-height: 1.15;
+  }
+  .step-card > p {
+    margin: 0 0 18px;
+    color: rgba(26,19,32,0.72);
+    font-size: 1rem;
+  }
+
+  .pay-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 16px;
+  }
+  @media (max-width: 600px) { .pay-grid { grid-template-columns: 1fr; } }
+  .pay-block {
+    background: var(--cream);
+    border: 1.5px dashed rgba(26,19,32,0.25);
+    border-radius: 14px;
+    padding: 16px;
+  }
+  .pay-block .pay-head {
+    display: flex; align-items: center; gap: 8px;
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 10px;
+  }
+  .pay-block ul { margin: 0; padding: 0; list-style: none; }
+  .pay-block li {
+    padding: 6px 0;
+    font-size: 0.92rem;
+    display: flex; gap: 10px; align-items: baseline;
+  }
+  .pay-block li::before { content: "→"; color: var(--magenta); font-weight: 800; }
+  .pay-block li b { font-weight: 700; }
+  .pay-block .price {
+    background: var(--gold);
+    color: var(--ink);
+    padding: 1px 8px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-family: "Archivo", sans-serif;
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+
+  .pay-note {
+    margin-top: 18px;
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 18px;
+    background: #ffe1ec;
+    border: 1.5px solid var(--magenta);
+    border-radius: 14px;
+    font-size: 0.92rem;
+  }
+  .pay-note .badge {
+    background: var(--magenta);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  /* JOIN CTA */
+  .join {
+    background: linear-gradient(135deg, var(--purple) 0%, var(--purple-deep) 100%);
+    color: var(--cream);
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .join h2 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin: 0 0 24px;
+    letter-spacing: -0.01em;
+  }
+  .join h2 .a { color: var(--gold); }
+  .join h2 .b { color: var(--magenta); font-style: italic; display: inline-block; }
+  .join-sub {
+    font-size: 1.18rem;
+    max-width: 580px;
+    margin: 0 auto 36px;
+    opacity: 0.92;
+  }
+  .join .btn-primary { background: var(--gold); color: var(--ink); border-color: var(--cream); box-shadow: 4px 4px 0 var(--cream); }
+  .join .btn-primary:hover { background: var(--cream); }
+  .join-note {
+    margin-top: 20px;
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 1.4rem;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--cream);
+    padding: 110px 0;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-card {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 22px;
+    padding: 36px 32px;
+    text-decoration: none; color: var(--ink);
+    transition: transform .15s ease, box-shadow .15s ease;
+    display: flex; flex-direction: column; gap: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-card:hover { transform: translate(-3px,-3px); box-shadow: 6px 6px 0 var(--ink); }
+  .contact-card .ic {
+    width: 56px; height: 56px; border-radius: 16px;
+    display: grid; place-items: center;
+    color: white;
+  }
+  .contact-card .ic svg { width: 28px; height: 28px; }
+  .contact-card.email .ic { background: var(--ink); }
+  .contact-card.phone .ic { background: var(--turq); }
+  .contact-card.instagram .ic { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+  .contact-card.facebook .ic { background: #1877f2; }
+  .contact-card.location .ic { background: var(--magenta); }
+  .contact-card .eyebrow { color: rgba(26,19,32,0.5); }
+  .contact-card .v {
+    font-family: "Archivo", sans-serif; font-weight: 800;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+  .contact-card .arrow-link {
+    margin-top: auto;
+    font-family: "Archivo", sans-serif; font-weight: 700;
+    font-size: 0.88rem;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 60px 0 30px;
+  }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 700px) { .foot-top { grid-template-columns: 1fr; gap: 28px; } }
+  .foot-brand .b1 { font-family: "Anton", sans-serif; font-size: 2.5rem; letter-spacing: 0.04em; line-height: 1; }
+  .foot-brand .b2 { font-family: "Caveat", cursive; color: var(--magenta); font-size: 1.4rem; line-height: 1; margin-top: 4px; }
+  .foot-brand p { margin: 18px 0 0; max-width: 320px; opacity: 0.7; font-size: 0.95rem; }
+  .foot-col h4 {
+    font-family: "Archivo", sans-serif; font-weight: 800;
+    font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 16px;
+  }
+  .foot-col a {
+    display: block;
+    text-decoration: none; color: var(--cream);
+    padding: 6px 0;
+    opacity: 0.85;
+    font-size: 0.96rem;
+  }
+  .foot-col a:hover { color: var(--magenta); opacity: 1; }
+  .foot-bottom {
+    border-top: 1px solid rgba(251,243,226,0.12);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    opacity: 0.6;
+  }
+
+  /* helpers */
+  .float-anim { animation: float 6s ease-in-out infinite; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(8deg); }
+    50% { transform: translateY(-10px) rotate(12deg); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── SVG SYMBOLS ─── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- volaó (flying fish) placeholder mark -->
+    <symbol id="i-fish" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 36 Q22 22 40 26 Q52 28 58 22 L54 36 L58 50 Q52 44 40 46 Q22 50 8 36 Z" fill="currentColor" fill-opacity="0.08"/>
+        <path d="M22 30 Q18 18 28 14 Q26 22 30 28"/>
+        <path d="M22 42 Q18 54 28 58 Q26 50 30 44"/>
+        <circle cx="46" cy="34" r="1.6" fill="currentColor"/>
+        <path d="M16 36 L22 36 M16 32 L20 33 M16 40 L20 39"/>
+      </g>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 7l9 6 9-6M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></g></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13 22v-8h2.7l.4-3.1H13V8.9c0-.9.3-1.5 1.6-1.5H16V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.3H7V14h2.6v8H13z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-7.1-7-12a7 7 0 0 1 14 0c0 4.9-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9v6a2 2 0 0 0 2 2h3a2 2 0 0 1 2 2v0a2 2 0 0 0 4 0 2 2 0 0 1 2-2h3a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3a2 2 0 0 1-2-2 2 2 0 0 0-4 0 2 2 0 0 1-2 2H5a2 2 0 0 0-2 2z"/></g></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18v4H3zM4 12v8h16v-8M12 8v13M12 8s-3-5-6-3 1 5 6 3zM12 8s3-5 6-3-1 5-6 3z"/></g></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.9 6.6L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.4z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></g></symbol>
+    <symbol id="i-cash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="11" rx="2"/><circle cx="12" cy="12.5" r="2.5"/><path d="M5 10v5M19 10v5"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  </defs>
+</svg>
+
+<!-- ─── NAV ─── -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <img class="brand-logo" src="assets/acali-logo-square.png" alt="ACALI El Volaó" />
+      <span style="display: flex; flex-direction: column;">
+        <span class="brand-name">ACALI</span>
+        <span class="brand-tag">el volaó</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#beneficios">Beneficios</a>
+      <a href="#socios">Socios</a>
+      <a href="#evento">Eventos</a>
+      <a href="#como-hacerse-socio">Cómo socio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a class="nav-cta" href="https://docs.google.com/forms/d/1KyKyqVaoUIyQj3lmzwr6qgq1MV_w9GPICQeJubcGU0s/viewform" target="_blank" rel="noopener">
+      Hazte socio
+      <svg width="14" height="14"><use href="#i-arrow"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- papel picado top -->
+<div class="picado" aria-hidden="true"></div>
+
+<!-- ─── HERO ─── -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        <span class="eyebrow" style="letter-spacing: 0.18em">La Línea de la Concepción · desde 2025</span>
+      </div>
+      <h1>
+        <span class="l1">Vive el</span>
+        <span class="l2">carnaval</span>
+        <span class="l3">todo <span class="underline">el año</span>.</span>
+      </h1>
+      <p class="hero-sub">Somos ACALI El Volaó, la Asociación de Carnavaler@s Linenses. Hazte socio, suma tu voz y comparte con nosotros la fiesta más grande de La Concha Fina.
+</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/1KyKyqVaoUIyQj3lmzwr6qgq1MV_w9GPICQeJubcGU0s/viewform" target="_blank" rel="noopener">
+          Hazte socio en 1 minuto
+          <svg width="18" height="18" class="arrow"><use href="#i-arrow"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#beneficios">Ver beneficios</a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="avatar-stack" aria-hidden="true">
+          <div class="avatar">MJ</div>
+          <div class="avatar">RP</div>
+          <div class="avatar">AL</div>
+          <div class="avatar">+</div>
+        </div>
+        <div class="trust-text">
+          <strong>40 carnavaler@s</strong> ya forman parte<br/>
+          <span style="opacity:.7">Únete tú también ✦</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="confetti" aria-hidden="true">
+        <span style="background:var(--magenta); top:-10px; left:30%; transform: rotate(20deg);"></span>
+        <span style="background:var(--gold); top:60%; right:-12px; transform: rotate(45deg);"></span>
+        <span style="background:var(--turq); bottom:10%; left:-8px; transform: rotate(-30deg); border-radius:50%;"></span>
+        <span style="background:var(--coral); top:20%; right:8%; transform: rotate(15deg); border-radius:50%;"></span>
+      </div>
+
+      <div class="poster">
+        <h3 class="poster-title">
+          Nuestra<br/>
+          Primera<br/>
+          <span class="accent">Comunión</span>
+        </h3>
+        <p class="poster-script">¡Arroz gratis y mucho arte!</p>
+        <dl class="poster-meta">
+          <dt>Día</dt><dd>Sábado 16 de Mayo</dd>
+          <dt>Hora</dt><dd>A partir de las 13:00</dd>
+          <dt>Lugar</dt><dd>Peña Flamenca Linense</dd>
+        </dl>
+      </div>
+
+      <div class="fish float-anim" aria-hidden="true">
+        <img src="assets/acali-logo-square.png" alt="" style="width: 96px; height: 96px; border-radius: 50%; object-fit: cover;" />
+      </div>
+      <div class="sticker">
+        <span class="big">DESDE<br/>2025</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── EVENTO MARQUEE ─── -->
+<div class="event-banner" aria-hidden="true">
+  <div class="event-marquee">
+    <span>
+      <span>Nuestra Primera Comunión</span>
+      <span class="star">✦</span>
+      <span class="pop">Sábado 16 Mayo</span>
+      <span class="star">✦</span>
+      <span>Peña Flamenca Linense</span>
+      <span class="star">✦</span>
+      <span class="pop">13:00h</span>
+      <span class="star">✦</span>
+      <span>Arroz Gratis</span>
+      <span class="star">✦</span>
+    </span>
+    <span aria-hidden="true">
+      <span>Nuestra Primera Comunión</span>
+      <span class="star">✦</span>
+      <span class="pop">Sábado 16 Mayo</span>
+      <span class="star">✦</span>
+      <span>Peña Flamenca Linense</span>
+      <span class="star">✦</span>
+      <span class="pop">13:00h</span>
+      <span class="star">✦</span>
+      <span>Arroz Gratis</span>
+      <span class="star">✦</span>
+    </span>
+  </div>
+</div>
+
+<!-- ─── BENEFICIOS ─── -->
+<section class="benefits section-pad" id="beneficios">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">— Por qué ser socio</span>
+      <h2>Beneficios <span style="color: var(--magenta); font-style: italic">de hacerte</span> socio</h2>
+      <p class="lead">Más que un carnet: una forma de vivir el carnaval linense desde dentro, con ventajas reales todo el año.</p>
+    </div>
+
+    <div class="benefits-grid">
+      <article class="benefit-card">
+        <span class="benefit-num">01</span>
+        <div class="benefit-icon"><svg><use href="#i-ticket"/></svg></div>
+        <h3>Acceso prioritario a eventos</h3>
+        <p>Plaza reservada en nuestros eventos privados y entrada preferente en los abiertos al público.</p>
+        <ul>
+          <li>Aforo reservado para socios</li>
+          <li>Fila preferente en eventos abiertos</li>
+          <li>Invitaciones a actos íntimos</li>
+        </ul>
+      </article>
+
+      <article class="benefit-card">
+        <span class="benefit-num">02</span>
+        <div class="benefit-icon" style="background: var(--magenta)"><svg><use href="#i-star"/></svg></div>
+        <h3>Descuentos en todos los eventos</h3>
+        <p>Tarifa especial socio en cada evento que organicemos durante el año carnavalero.</p>
+        <ul>
+          <li>Precios reducidos por evento</li>
+          <li>Packs anuales con ahorro</li>
+          <li>Promos exclusivas para socios</li>
+        </ul>
+      </article>
+
+      <article class="benefit-card">
+        <span class="benefit-num">03</span>
+        <div class="benefit-icon" style="background: var(--purple)"><svg><use href="#i-gift"/></svg></div>
+        <h3>Regalos oficiales ACALI</h3>
+        <p>Recibe el merchandising oficial: pulsera, camiseta y más sorpresas a lo largo del año.</p>
+        <ul>
+          <li>Pulsera oficial de socio</li>
+          <li>Camiseta de la asociación</li>
+          <li>Sorpresas en fechas señaladas</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Merch showcase: real bracelet photo -->
+    <div class="merch-showcase">
+      <div class="merch-img">
+        <img src="assets/pulsera-socio.jpeg" alt="Pulsera oficial de socio de ACALI El Volaó" />
+        <span class="merch-stamp">Regalo oficial</span>
+      </div>
+      <div class="merch-text">
+        <span class="eyebrow">— Tu pulsera de soci@</span>
+        <h3>El sello del <span class="a">volaó</span><br/>en tu muñeca</h3>
+        <p>Al hacerte socio recibes la pulsera oficial de ACALI El Volaó. Tejido turquesa, sello de la asociación y mucho carnaval. Llévala todo el año.</p>
+        <p class="script">¡Hecha para presumir!</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="counter" id="socios">
+  <div class="wrap counter-inner">
+    <p class="script">¡Y subiendo!</p>
+    <p class="counter-num"><span id="num">40</span><span class="plus">+</span></p>
+    <p class="counter-label">Socios y socias activos</p>
+    <p class="counter-sub">Cuarenta carnavaler@s con su arte y muchas ganas de coplas. Cada nuevo socio hace más grande este proyecto.</p>
+    <div class="counter-bar">
+      <div><span class="num">2025</span> Fundada</div>
+      <div><span class="num">100%</span> Linense</div>
+      <div><span class="num">365</span> Días de carnaval</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NAMES TICKER ─── -->
+<div class="names-ticker" aria-label="Nombres de soci@s actuales">
+  <div class="head">— Familia ACALI · soci@s actuales —</div>
+  <div class="names-track" id="namesTrack"></div>
+</div>
+
+<!-- ─── EVENTO DETALLE ─── -->
+<section class="event-detail" id="evento">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom: 40px">
+      <span class="eyebrow" style="color: var(--magenta)">— Próximo evento</span>
+      <h2>Nos vemos en <span style="color: var(--magenta); font-style: italic">la Peña</span></h2>
+    </div>
+
+    <article class="event-card">
+      <div class="event-date">
+        <span class="event-day">Sábado</span>
+        <span class="event-num">16</span>
+        <span class="event-month">Mayo</span>
+        <span class="event-year">2026 · 13:00h</span>
+      </div>
+      <div class="event-body">
+        <span class="event-tag">Acto fundacional</span>
+        <h3 class="event-title">Nuestra <span class="accent">Primera<br/>Comunión</span></h3>
+        <p class="event-desc">
+          Ven a disfrutar del <strong>primer acto de convivencia</strong> de la asociación. Arroz gratis para todos, actuaciones en directo y muchas ganas de pasarlo bien en familia carnavalera.
+        </p>
+
+        <div class="event-meta">
+          <div class="event-meta-item">
+            <div class="event-meta-icon"><svg><use href="#i-cal"/></svg></div>
+            <div class="event-meta-text">
+              <div class="k">Cuándo</div>
+              <div class="v">Sábado 16 mayo</div>
+            </div>
+          </div>
+          <div class="event-meta-item">
+            <div class="event-meta-icon"><svg><use href="#i-clock"/></svg></div>
+            <div class="event-meta-text">
+              <div class="k">Hora</div>
+              <div class="v">A partir de las 13:00</div>
+            </div>
+          </div>
+          <div class="event-meta-item">
+            <div class="event-meta-icon"><svg><use href="#i-pin"/></svg></div>
+            <div class="event-meta-text">
+              <div class="k">Dónde</div>
+              <div class="v">Peña Flamenca Linense</div>
+            </div>
+          </div>
+          <div class="event-meta-item">
+            <div class="event-meta-icon"><svg><use href="#i-ticket"/></svg></div>
+            <div class="event-meta-text">
+              <div class="k">Entrada</div>
+              <div class="v">Arroz gratis · actuaciones</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <div style="font-family: 'Archivo', sans-serif; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold);">Actuaciones</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="background: rgba(251,243,226,0.1); padding: 8px 14px; border-radius: 999px; font-size: 0.88rem; font-weight: 600;">La Junqillera</span>
+            <span style="background: rgba(251,243,226,0.1); padding: 8px 14px; border-radius: 999px; font-size: 0.88rem; font-weight: 600;">Los Desparasitaos</span>
+            <span style="background: rgba(251,243,226,0.1); padding: 8px 14px; border-radius: 999px; font-size: 0.88rem; font-weight: 600;">Tu cara me suena</span>
+            <span style="background: rgba(251,243,226,0.1); padding: 8px 14px; border-radius: 999px; font-size: 0.88rem; font-weight: 600;">La batería</span>
+            <span style="background: rgba(251,243,226,0.1); padding: 8px 14px; border-radius: 999px; font-size: 0.88rem; font-weight: 600;">Los KFC</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- papel picado purple -->
+<div class="picado purple" aria-hidden="true"></div>
+
+<!-- ─── QUIENES SOMOS ─── -->
+<section class="about" id="nosotros">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow" style="color: var(--magenta); margin-bottom: 18px; display: block;">— Quiénes somos</span>
+      <p class="about-quote">
+        Que el espíritu del carnaval de la Concha Fina no sea cosa de unos pocos días, sino una forma de vivir todo el año.
+      </p>
+      <p>
+        ACALI El Volaó nace en <strong>2025</strong> en La Línea de la Concepción con un objetivo claro: hacer del carnaval un motor cultural, social y festivo de la ciudad, los 365 días del año.
+      </p>
+      <p>Somos vecinos, Chirigoteros, Comparsistas y amigos de toda la vida. Organizamos eventos, fomentamos la cantera carnavalera y captamos socios para que el volaó nunca deje de volar.</p>
+      <div class="about-badges">
+        <span class="about-badge"><span class="y">✦</span> Sin ánimo de lucro</span>
+        <span class="about-badge"><span class="y">✦</span> 100% linense</span>
+        <span class="about-badge"><span class="y">✦</span> Abierta a tod@s</span>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="photo-slot ps1">
+        <img src="assets/photo-ayuntamiento.jpg" alt="Reunión de la junta de ACALI en el Ayuntamiento de La Línea" />
+        <span class="cap">en el ayuntamiento</span>
+      </div>
+      <div class="photo-slot ps2">
+        <img src="assets/photo-radio.jpeg" alt="Miembros de ACALI en Radio Algeciras (SER)" />
+        <span class="cap">en la SER</span>
+      </div>
+      <div class="photo-slot ps3">
+        <img src="assets/photo-reunion-1.jpeg" alt="Reunión de trabajo de ACALI" />
+        <span class="cap">reunión de junta</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW TO JOIN ─── -->
+<section class="how" id="como-hacerse-socio">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">— Cómo hacerse soci@</span>
+      <h2>En <span style="color: var(--magenta); font-style: italic">dos pasos</span><br/>estás dentro</h2>
+      <p class="lead">Te lo ponemos fácil. Rellena el formulario, elige cómo prefieres aportar tu cuota y ¡listo, ya eres parte del volaó!</p>
+    </div>
+
+    <div class="how-steps">
+      <article class="step-card">
+        <div class="step-num">1</div>
+        <h3>Rellena el formulario</h3>
+        <p>Rellena el formulario con tus datos personales. Solo te llevará un minuto.</p>
+        <a class="btn btn-primary" style="padding: 12px 20px; font-size: 0.92rem; box-shadow: 3px 3px 0 var(--ink);" href="https://docs.google.com/forms/d/1KyKyqVaoUIyQj3lmzwr6qgq1MV_w9GPICQeJubcGU0s/viewform" target="_blank" rel="noopener">
+          Abrir formulario
+          <svg width="16" height="16" class="arrow"><use href="#i-arrow"/></svg>
+        </a>
+      </article>
+
+      <article class="step-card">
+        <div class="step-num">2</div>
+        <h3>Elige tu forma de pago</h3>
+        <p>Puedes pagar por transferencia desde la app de tu banco, o en metálico directamente con la asociación.</p>
+
+        <div class="pay-grid">
+          <div class="pay-block">
+            <div class="pay-head">
+              <svg width="14" height="14" style="color: var(--purple)"><use href="#i-card"/></svg>
+              Pagos digitales
+            </div>
+            <ul>
+              <li>Transferencia <b>mensual</b> <span class="price">5€</span></li>
+              <li>Transferencia <b>semestral</b> <span class="price">30€</span></li>
+              <li>Transferencia <b>anual</b> <span class="price">60€</span></li>
+            </ul>
+          </div>
+          <div class="pay-block">
+            <div class="pay-head">
+              <svg width="14" height="14" style="color: var(--purple)"><use href="#i-cash"/></svg>
+              Pagos físicos
+            </div>
+            <ul>
+              <li>Pago físico <b>semestral</b> <span class="price">mín. 30€</span></li>
+              <li>Pago físico <b>anual</b> <span class="price">60€</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pay-note">
+          <span class="badge">Nota</span>
+          <span>Transferencia por <b>Bizum</b> no disponible por el momento.</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── JOIN CTA ─── -->
+<section class="join">
+  <div class="wrap" style="position: relative; z-index: 1;">
+    <span class="eyebrow" style="color: var(--gold); display: block; margin-bottom: 18px;">— Súbete al volaó</span>
+    <h2>
+      Hazte <span class="a">socio</span><br/>
+      <span class="b">en un minuto</span>
+    </h2>
+    <p class="join-sub">
+      Rellena el formulario, pásate por nuestros eventos y empieza a disfrutar de todos los beneficios de pertenecer a la familia ACALI.
+    </p>
+    <a class="btn btn-primary" href="https://docs.google.com/forms/d/1KyKyqVaoUIyQj3lmzwr6qgq1MV_w9GPICQeJubcGU0s/viewform" target="_blank" rel="noopener">
+      Abrir formulario de socio
+      <svg width="18" height="18" class="arrow"><use href="#i-arrow"/></svg>
+    </a>
+    <p class="join-note">¡te esperamos! ✦</p>
+  </div>
+  <!-- decorative stars -->
+  <svg style="position:absolute; top:8%; left:5%; width:60px; color: var(--gold); opacity:.4; transform: rotate(-12deg)" aria-hidden="true"><use href="#i-star"/></svg>
+  <svg style="position:absolute; bottom:10%; right:6%; width:80px; color: var(--magenta); opacity:.5; transform: rotate(18deg)" aria-hidden="true"><use href="#i-star"/></svg>
+  <svg style="position:absolute; top:22%; right:14%; width:40px; color: var(--cream); opacity:.3" aria-hidden="true"><use href="#i-star"/></svg>
+  <svg style="position:absolute; bottom:18%; left:12%; width:48px; color: var(--gold); opacity:.3" aria-hidden="true"><use href="#i-star"/></svg>
+</section>
+
+<!-- ─── CONTACTO ─── -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">— Contacto</span>
+      <h2>¿Hablamos? <span style="color: var(--magenta); font-style: italic">Estamos cerca.</span></h2>
+      <p class="lead">Escríbenos, síguenos o pásate por cualquiera de nuestros eventos. Las puertas de ACALI están siempre abiertas.</p>
+    </div>
+
+    <div class="contact-grid">
+      <a class="contact-card email" href="mailto:accalivolao@gmail.com">
+        <div class="ic"><svg><use href="#i-mail"/></svg></div>
+        <span class="eyebrow">Email</span>
+        <span class="v">accalivolao@gmail.com</span>
+        <span class="arrow-link">Escríbenos <svg width="14" height="14"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="contact-card phone" href="tel:+34636827946">
+        <div class="ic"><svg><use href="#i-phone"/></svg></div>
+        <span class="eyebrow">Teléfono de secretaría</span>
+        <span class="v">636 82 79 46</span>
+        <span class="arrow-link">Llámanos <svg width="14" height="14"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="contact-card instagram" href="https://www.instagram.com/acalivolao/" target="_blank" rel="noopener noreferrer">
+        <div class="ic"><svg><use href="#i-ig"/></svg></div>
+        <span class="eyebrow">Instagram</span>
+        <span class="v">@acalivolao</span>
+        <span class="arrow-link">Síguenos <svg width="14" height="14"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="contact-card facebook" href="https://www.facebook.com/share/18bxwZhFWJ/" target="_blank" rel="noopener noreferrer">
+        <div class="ic"><svg><use href="#i-fb"/></svg></div>
+        <span class="eyebrow">Facebook</span>
+        <span class="v">ACALI El Volaó</span>
+        <span class="arrow-link">Visítanos <svg width="14" height="14"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="contact-card location" href="#">
+        <div class="ic"><svg><use href="#i-pin"/></svg></div>
+        <span class="eyebrow">Dónde</span>
+        <span class="v">La Línea de la Concepción · Cádiz</span>
+        <span class="arrow-link">Ven a vernos <svg width="14" height="14"><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<div class="picado" aria-hidden="true"></div>
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <img src="assets/acali-logo-square.png" alt="ACALI El Volaó" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); box-shadow: 3px 3px 0 var(--magenta);" />
+          <div>
+            <div class="b1">ACALI</div>
+            <div class="b2">el volaó</div>
+          </div>
+        </div>
+        <p>Asociación de Carnavaler@s Linenses. Vivimos el carnaval de La Línea todo el año, desde 2025.</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Web</h4>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#socios">Socios</a>
+        <a href="#evento">Próximo evento</a>
+        <a href="#como-hacerse-socio">Cómo hacerse socio</a>
+        <a href="#nosotros">Quiénes somos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Redes</h4>
+        <a href="mailto:accalivolao@gmail.com">accalivolao@gmail.com</a>
+        <a href="https://www.instagram.com/acalivolao/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/share/18bxwZhFWJ/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://docs.google.com/forms/d/1KyKyqVaoUIyQj3lmzwr6qgq1MV_w9GPICQeJubcGU0s/viewform" target="_blank" rel="noopener">Formulario de socio</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ACALI El Volaó · Asociación de Carnavaler@s Linenses</span>
+      <span>Creado por Oscar López en La Línea</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll for in-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 70, behavior: 'smooth' });
+    });
+  });
+
+  // Counter animation
+  const numEl = document.getElementById('num');
+  const target = 40;
+  let observed = false;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !observed) {
+        observed = true;
+        let n = 0;
+        const step = () => {
+          n += Math.max(1, Math.round((target - n) / 6));
+          if (n >= target) { numEl.textContent = target; return; }
+          numEl.textContent = n;
+          requestAnimationFrame(step);
+        };
+        step();
+      }
+    });
+  }, { threshold: 0.4 });
+  io.observe(numEl);
+
+  // Names ticker — first names of current members
+  const NAMES = [
+    "Roberto","Juan Marcos","Lorena","Israel","Francisco José",
+    "José Ángel","Isabel María","Óscar","Vanesa","Samanta",
+    "Patricia","Jesús David","Pedro","Juan Manuel","Álvaro",
+    "Miguel Ángel","Pablo","Francisco Javier","Jesús","Ana",
+    "Roberto","Trinidad","Rafael","Carmen María","Mercedes",
+    "Sergio","Nuria","Mario","Nancy","Ana Amalia"
+  ];
+  const track = document.getElementById('namesTrack');
+  if (track) {
+    const buildRow = () => {
+      const row = document.createElement('span');
+      NAMES.forEach((name, i) => {
+        const n = document.createElement('span');
+        n.className = 'n';
+        n.textContent = name;
+        row.appendChild(n);
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        dot.setAttribute('aria-hidden', 'true');
+        row.appendChild(dot);
+      });
+      return row;
+    };
+    // Duplicate for seamless loop
+    track.appendChild(buildRow());
+    track.appendChild(buildRow());
+  }
+</script>
+
+</body>
+</html>
