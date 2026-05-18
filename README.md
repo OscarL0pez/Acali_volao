@@ -1,32 +1,24 @@
 # ACALI El Volaó · Web
 
-Web estática de la Asociación de Carnavaler@s Linenses.
+Web de la Asociación de Carnavaler@s Linenses.
 
-## Cómo desplegar en Vercel (sin línea de comandos)
+## Cómo actualizar en GitHub (drag & drop, sin terminal)
 
-1. Entra en https://vercel.com y crea una cuenta gratis (puedes registrarte con GitHub, GitLab, email o Google).
-2. Una vez dentro, pulsa **"Add New…" → "Project"**.
-3. En la pantalla de importación, baja hasta **"Deploy without Git"** o haz clic en el icono de carpeta arriba a la derecha que dice **"Upload Folder"**.
-4. Arrastra la carpeta `deploy` entera (la que contiene `index.html` y la carpeta `assets`).
-5. Pon de nombre al proyecto: `acali-elvolao` (o lo que prefieras).
-6. Pulsa **Deploy**.
+1. Entra en https://github.com/OscarL0pez/Acali_volao
+2. Pulsa **"Add file" → "Upload files"** (botón arriba a la derecha).
+3. **Arrastra el contenido de esta carpeta `deploy`** (NO la carpeta entera):
+   - `index.html`
+   - la carpeta `assets/` completa con todas las imágenes
+4. Abajo en "Commit changes", escribe un mensaje tipo "Galería evento 16 mayo + 70 socios" y pulsa **Commit changes**.
+5. GitHub te avisará que reemplaza los archivos existentes — dile que sí.
 
-Vercel te dará una URL del tipo `https://acali-elvolao.vercel.app` lista para compartir.
+Vercel detecta el push automáticamente y redespliega en **30-60 segundos**.
 
-## Cómo añadir tu dominio personalizado (opcional)
+## Si Vercel no se actualiza
+- Entra en tu dashboard de Vercel → tu proyecto → pestaña **Deployments**
+- Verifica que aparece el nuevo deploy con el mensaje del commit
+- Si está en "Error", haz clic para ver el log
 
-Si compras un dominio (por ejemplo `acalielvolao.es`):
-
-1. En tu proyecto en Vercel, ve a **Settings → Domains**.
-2. Añade el dominio.
-3. Vercel te dará un par de registros DNS (CNAME o A records). Cópialos en el panel de tu proveedor de dominios (GoDaddy, Namecheap, Dondominio, etc.).
-4. En unos minutos el dominio apuntará a la web.
-
-## Estructura
-
-- `index.html` — página principal
-- `assets/` — imágenes (logo, fotos, pulsera)
-
-## Para actualizar
-
-Cada vez que quieras cambiar algo de la web, pídeme los cambios, te paso un ZIP actualizado, y lo vuelves a arrastrar a Vercel (sobreescribirá el deploy anterior). Si conectas a GitHub se actualiza solo al hacer push.
+## Verificar que el preview de WhatsApp se actualizó
+- Pega el enlace de tu web en https://developers.facebook.com/tools/debug/
+- Pulsa "Scrape Again" para que Facebook/WhatsApp regeneren el preview

@@ -682,7 +682,145 @@
   .event-month { font-family: "Anton", sans-serif; font-size: 2.2rem; text-transform: uppercase; }
   .event-year { margin-top: 8px; font-weight: 700; }
 
-  .event-body { padding: 60px 48px; }
+  .event-body { padding: 60px 48px; position: relative; }
+  .event-past-stamp {
+    position: absolute;
+    top: 28px; right: 28px;
+    background: var(--magenta);
+    color: white;
+    font-family: "Archivo", sans-serif;
+    font-weight: 900;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 2px solid var(--cream);
+    transform: rotate(6deg);
+    z-index: 2;
+  }
+  @media (max-width: 900px) { .event-past-stamp { top: 20px; right: 20px; } }
+
+  /* Gallery */
+  .gallery-head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+    margin: 60px 0 28px;
+  }
+  .gallery-head h3 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .gallery-head h3 .a { color: var(--magenta); font-style: italic; }
+  .gallery-head .script {
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--purple);
+    transform: rotate(-2deg);
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 180px;
+    gap: 12px;
+  }
+  @media (max-width: 900px) { .gallery { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 140px; } }
+  @media (max-width: 600px) { .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; } }
+  .gallery figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 2px solid var(--ink);
+    background: var(--ink);
+    cursor: pointer;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .gallery figure:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--ink); }
+  .gallery figure img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+  }
+  .gallery figure:hover img { transform: scale(1.04); }
+  .gallery figure figcaption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 24px 14px 12px;
+    background: linear-gradient(to top, rgba(26,19,32,0.85), transparent);
+    color: var(--cream);
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .25s ease, transform .25s ease;
+    pointer-events: none;
+  }
+  .gallery figure:hover figcaption { opacity: 1; transform: translateY(0); }
+  /* Mosaic spans */
+  .g-tall { grid-row: span 2; }
+  .g-wide { grid-column: span 2; }
+  .g-big  { grid-column: span 2; grid-row: span 2; }
+  @media (max-width: 600px) {
+    .g-big, .g-wide { grid-column: span 2; }
+    .g-tall { grid-row: span 1; }
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 100;
+    background: rgba(26,19,32,0.95);
+    display: none;
+    align-items: center; justify-content: center;
+    padding: 24px;
+    cursor: zoom-out;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 100%; max-height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .lightbox-close {
+    position: absolute; top: 20px; right: 20px;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--magenta);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: grid; place-items: center;
+  }
+  .lightbox-arrow {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: grid; place-items: center;
+    font-family: "Anton", sans-serif;
+  }
+  .lightbox-arrow.prev { left: 24px; }
+  .lightbox-arrow.next { right: 24px; }
+  @media (max-width: 600px) {
+    .lightbox-arrow { width: 44px; height: 44px; font-size: 1.4rem; }
+    .lightbox-arrow.prev { left: 12px; }
+    .lightbox-arrow.next { right: 12px; }
+  }
   .event-tag {
     display: inline-block;
     background: var(--magenta); color: white;
@@ -1142,7 +1280,7 @@
           <div class="avatar">+</div>
         </div>
         <div class="trust-text">
-          <strong>40 carnavaler@s</strong> ya forman parte<br/>
+          <strong>70 carnavaler@s</strong> ya forman parte<br/>
           <span style="opacity:.7">Únete tú también ✦</span>
         </div>
       </div>
@@ -1158,15 +1296,15 @@
 
       <div class="poster">
         <h3 class="poster-title">
-          Nuestra<br/>
-          Primera<br/>
-          <span class="accent">Comunión</span>
+          Vive<br/>
+          el <span class="accent">volaó</span><br/>
+          todo el año
         </h3>
-        <p class="poster-script">¡Arroz gratis y mucho arte!</p>
+        <p class="poster-script">¡y mucho más por venir!</p>
         <dl class="poster-meta">
-          <dt>Día</dt><dd>Sábado 16 de Mayo</dd>
-          <dt>Hora</dt><dd>A partir de las 13:00</dd>
-          <dt>Lugar</dt><dd>Peña Flamenca Linense</dd>
+          <dt>Próximo</dt><dd>Lo anunciaremos pronto</dd>
+          <dt>Dónde</dt><dd>La Línea de la Concepción</dd>
+          <dt>Socios</dt><dd>Plazas reservadas</dd>
         </dl>
       </div>
 
@@ -1275,9 +1413,9 @@
 <section class="counter" id="socios">
   <div class="wrap counter-inner">
     <p class="script">¡Y subiendo!</p>
-    <p class="counter-num"><span id="num">40</span><span class="plus">+</span></p>
+    <p class="counter-num"><span id="num">70</span><span class="plus">+</span></p>
     <p class="counter-label">Socios y socias activos</p>
-    <p class="counter-sub">Cuarenta carnavaler@s con su arte y muchas ganas de coplas. Cada nuevo socio hace más grande este proyecto.</p>
+    <p class="counter-sub">Setenta carnavaler@s con su arte y muchas ganas de coplas. Cada nuevo socio hace más grande este proyecto.</p>
     <div class="counter-bar">
       <div><span class="num">2025</span> Fundada</div>
       <div><span class="num">100%</span> Linense</div>
@@ -1292,12 +1430,13 @@
   <div class="names-track" id="namesTrack"></div>
 </div>
 
-<!-- ─── EVENTO DETALLE ─── -->
+<!-- ─── EVENTO PASADO + GALERÍA ─── -->
 <section class="event-detail" id="evento">
   <div class="wrap">
     <div class="section-head" style="margin-bottom: 40px">
-      <span class="eyebrow" style="color: var(--magenta)">— Próximo evento</span>
-      <h2>Nos vemos en <span style="color: var(--magenta); font-style: italic">la Peña</span></h2>
+      <span class="eyebrow" style="color: var(--magenta)">— Así lo vivimos</span>
+      <h2>Nuestra <span style="color: var(--magenta); font-style: italic">Primera Comunión</span></h2>
+      <p class="lead">El 16 de mayo nos juntamos en la Peña Flamenca Linense para celebrar nuestro primer gran acto. Arroz, coplas, papelillos y muchos abrazos. ¡Gracias a tod@s por hacerlo posible!</p>
     </div>
 
     <article class="event-card">
@@ -1308,10 +1447,11 @@
         <span class="event-year">2026 · 13:00h</span>
       </div>
       <div class="event-body">
+        <span class="event-past-stamp">✓ Evento celebrado</span>
         <span class="event-tag">Acto fundacional</span>
         <h3 class="event-title">Nuestra <span class="accent">Primera<br/>Comunión</span></h3>
         <p class="event-desc">
-          Ven a disfrutar del <strong>primer acto de convivencia</strong> de la asociación. Arroz gratis para todos, actuaciones en directo y muchas ganas de pasarlo bien en familia carnavalera.
+          Celebramos el <strong>primer acto de convivencia</strong> de la asociación. Arroz para todos, actuaciones en directo, entrega de trofeos y un dín lleno de carnaval en familia.
         </p>
 
         <div class="event-meta">
@@ -1326,13 +1466,13 @@
             <div class="event-meta-icon"><svg><use href="#i-clock"/></svg></div>
             <div class="event-meta-text">
               <div class="k">Hora</div>
-              <div class="v">A partir de las 13:00</div>
+              <div class="v">Desde las 13:00</div>
             </div>
           </div>
           <div class="event-meta-item">
             <div class="event-meta-icon"><svg><use href="#i-pin"/></svg></div>
             <div class="event-meta-text">
-              <div class="k">Dónde</div>
+              <div class="k">Dónde </div>
               <div class="v">Peña Flamenca Linense</div>
             </div>
           </div>
@@ -1357,8 +1497,65 @@
         </div>
       </div>
     </article>
+
+    <!-- Galería de fotos -->
+    <div class="gallery-head">
+      <h3><span class="a">Galería</span> del evento</h3>
+      <span class="script">¡qué día más grande!</span>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <figure class="g-big" data-full="assets/evento-01-grupo-grande.jpg">
+        <img src="assets/evento-01-grupo-grande.jpg" alt="Grupo grande de socios con papelillos cayendo" loading="lazy" />
+        <figcaption>la familia ACALI al completo</figcaption>
+      </figure>
+      <figure class="g-tall" data-full="assets/evento-04-trofeo-acali.jpg">
+        <img src="assets/evento-04-trofeo-acali.jpg" alt="Entrega del trofeo ACALI El Volaó" loading="lazy" />
+        <figcaption>el momento del trofeo</figcaption>
+      </figure>
+      <figure data-full="assets/evento-05-trofeo-ganador.jpg">
+        <img src="assets/evento-05-trofeo-ganador.jpg" alt="Ganador del trofeo ACALI" loading="lazy" />
+        <figcaption>orgullo carnavalero</figcaption>
+      </figure>
+      <figure data-full="assets/evento-08-amigos.jpg">
+        <img src="assets/evento-08-amigos.jpg" alt="Dos socios sonriendo" loading="lazy" />
+        <figcaption>amigos de toda la vida</figcaption>
+      </figure>
+      <figure class="g-wide" data-full="assets/evento-06-la-bateria.jpg">
+        <img src="assets/evento-06-la-bateria.jpg" alt="La Batería entrando a actuar" loading="lazy" />
+        <figcaption>La Batería en escena</figcaption>
+      </figure>
+      <figure data-full="assets/evento-09-staff.jpg">
+        <img src="assets/evento-09-staff.jpg" alt="Staff ACALI con asistentes" loading="lazy" />
+        <figcaption>nuestro staff</figcaption>
+      </figure>
+      <figure data-full="assets/evento-03-trofeo-cantera.jpg">
+        <img src="assets/evento-03-trofeo-cantera.jpg" alt="Entrega de trofeo con la cantera" loading="lazy" />
+        <figcaption>la cantera</figcaption>
+      </figure>
+      <figure class="g-wide" data-full="assets/evento-02-foto-familia.jpg">
+        <img src="assets/evento-02-foto-familia.jpg" alt="Foto de familia con todos los socios" loading="lazy" />
+        <figcaption>todos a una</figcaption>
+      </figure>
+      <figure class="g-tall" data-full="assets/evento-07-papelillos.jpg">
+        <img src="assets/evento-07-papelillos.jpg" alt="Papelillos cayendo del techo" loading="lazy" />
+        <figcaption>papelillos y carnaval</figcaption>
+      </figure>
+      <figure class="g-wide" data-full="assets/evento-10-publico.jpg">
+        <img src="assets/evento-10-publico.jpg" alt="Público disfrutando de las actuaciones" loading="lazy" />
+        <figcaption>el público entregado</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lbClose" aria-label="Cerrar">✕</button>
+  <button class="lightbox-arrow prev" id="lbPrev" aria-label="Anterior">‹</button>
+  <img id="lbImg" src="" alt="" />
+  <button class="lightbox-arrow next" id="lbNext" aria-label="Siguiente">›</button>
+</div>
 
 <!-- papel picado purple -->
 <div class="picado purple" aria-hidden="true"></div>
@@ -1580,7 +1777,7 @@
 
   // Counter animation
   const numEl = document.getElementById('num');
-  const target = 40;
+  const target = 70;
   let observed = false;
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -1628,6 +1825,45 @@
     track.appendChild(buildRow());
     track.appendChild(buildRow());
   }
+
+  // Gallery lightbox
+  (function setupLightbox() {
+    const figures = [...document.querySelectorAll('#gallery figure')];
+    if (!figures.length) return;
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbClose = document.getElementById('lbClose');
+    const lbPrev = document.getElementById('lbPrev');
+    const lbNext = document.getElementById('lbNext');
+    let i = 0;
+    const open = (idx) => {
+      i = idx;
+      const src = figures[i].getAttribute('data-full');
+      const alt = figures[i].querySelector('img').alt;
+      lbImg.src = src;
+      lbImg.alt = alt;
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+    const go = (delta) => open((i + delta + figures.length) % figures.length);
+    figures.forEach((f, idx) => f.addEventListener('click', () => open(idx)));
+    lbClose.addEventListener('click', close);
+    lbPrev.addEventListener('click', (e) => { e.stopPropagation(); go(-1); });
+    lbNext.addEventListener('click', (e) => { e.stopPropagation(); go(1); });
+    lb.addEventListener('click', (e) => { if (e.target === lb || e.target === lbImg) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') go(-1);
+      if (e.key === 'ArrowRight') go(1);
+    });
+  })();
 </script>
 
 </body>
